@@ -1,17 +1,29 @@
 name: Build TICK - Windows
 on: [push]
+
 jobs:
   build:
     runs-on: windows-latest
     steps:
+      # 1) Get the repo + all submodules (JUCE, etc.)
       - uses: actions/checkout@v4
-        with: { submodules: recursive }
-      - name: Build
-        shell: cmd
-        run: .\build_win.bat
+        with:
+          submodules: recursive
+
+      # 2) Configure & build only Stand-alone and VST3
+      - name: Configure + Build (Standalone & VST3)
+        shell: bash
+        run: |
+          cmake -B build -G "Visual Studio 17 2022" \
+                -DCOPY_AFTER_BUILD=FALSE \
+                -DPLUGIN_FORMATS_TO_BUILD="Standalone;VST3"
+          cmake --build build --config RelWithDebInfo \
+                --target TICK_Standalone TICK_VST3
+
+      # 3) Upload the binaries as an artefact
       - uses: actions/upload-artifact@v4
         with:
           name: TICK-windows
           path: |
-            build\TICK_artefacts\RelWithDebInfo\Standalone\TICK.exe
-            build\TICK_artefacts\RelWithDebInfo\VST3\TICK.vst3
+            build/TICK_artefacts/RelWithDebInfo/Standalone/TICK.exe
+            build/TICK_artefacts/RelWithDebInfo/VST3/TICK.vst3
