@@ -1,0 +1,17 @@
+name: Build TICK - Windows
+on: [push]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - name: Build
+        shell: cmd
+        run: .\build_win.bat
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TICK-windows
+          path: |
+            build\TICK_artefacts\RelWithDebInfo\Standalone\TICK.exe
+            build\TICK_artefacts\RelWithDebInfo\VST3\TICK.vst3
