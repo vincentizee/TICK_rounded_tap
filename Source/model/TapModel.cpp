@@ -1,5 +1,4 @@
 #include "TapModel.h"
-#include <cmath>
 
 double TapModel::pushTap (const juce::Time& t)
 {
@@ -23,7 +22,6 @@ double TapModel::pushTap (const juce::Time& t)
             tapPoints.pop_back();
         
     }
-    lastDetectedBPM = std::round (lastDetectedBPM);
     return lastDetectedBPM;
 }
 
