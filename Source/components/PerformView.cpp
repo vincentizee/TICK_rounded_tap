@@ -10,7 +10,7 @@
 
 #include "PerformView.h"
 #include "LookAndFeel.h"
-
+#include <cmath>
 #include "EditBeatView.h"
 #include "utils/SamplesPaint.h"
 
