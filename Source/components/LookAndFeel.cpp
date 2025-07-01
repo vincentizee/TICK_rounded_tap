@@ -19,10 +19,10 @@ const juce::Colour TickLookAndFeel::Colours::buttonSoftBackground = juce::Colour
 const juce::Colour TickLookAndFeel::Colours::tickNameColour = juce::Colours::transparentBlack.darker();
 const juce::Colour TickLookAndFeel::Colours::backgroundColour = juce::Colours::black;
 
-const juce::Colour TickLookAndFeel::Colours::peach = juce::Colour::fromString ("ffF2A099");
-const juce::Colour TickLookAndFeel::Colours::clay = juce::Colour::fromString ("ffBF6B63");
-const juce::Colour TickLookAndFeel::Colours::wood = juce::Colour::fromString ("ffC0A08E");
-const juce::Colour TickLookAndFeel::Colours::mint = juce::Colour::fromString ("ffA8BFB2");
+const juce::Colour TickLookAndFeel::Colours::peach = juce::Colour::fromString ("ff5B3B69"); // deep purple
+const juce::Colour TickLookAndFeel::Colours::mint = juce::Colour::fromString ("ff3A2752"); // darker purple
+const juce::Colour TickLookAndFeel::Colours::clay = juce::Colour::fromString ("ff8B5AA7"); // bright accent
+const juce::Colour TickLookAndFeel::Colours::wood = juce::Colour::fromString ("ff261630"); // near-black purple
 const juce::Colour TickLookAndFeel::Colours::grey = juce::Colour::fromString ("ff373640");
 
 // should be greater or equal to kMaxTick...
