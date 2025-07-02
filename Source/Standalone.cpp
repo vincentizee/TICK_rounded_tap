@@ -89,7 +89,7 @@ public:
     void initialise (const String&) override
     {
         mainWindow.reset (createWindow());
-        mainWindow->setColour (ResizableWindow::backgroundColourId, Colours::Black);
+        mainWindow->setColour (ResizableWindow::backgroundColourId, Colours::transparentBlack);
         static_cast<TickAudioProcessor*> (mainWindow->getAudioProcessor())->setExternalProps (appProperties.getUserSettings());
 #if JUCE_IOS
         mainWindow->getPeer()->setAppStyle (ComponentPeer::Style::dark);
