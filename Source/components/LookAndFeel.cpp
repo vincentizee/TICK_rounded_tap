@@ -107,8 +107,16 @@ juce::Path TickLookAndFeel::getArrowPath (juce::Rectangle<float> arrowZone, cons
 }
 
 TickLookAndFeel::TickLookAndFeel()
+    : LookAndFeel_V4()  // make sure you call the V4 base-class ctor
 {
+    // keep your custom font…
     LookAndFeel::setDefaultSansSerifTypefaceName ("KlokanTechNotoSans");
+
+    // …then override JUCE’s default greens with your dark purple:
+    setColour (juce::ResizableWindow::backgroundColourId,
+               juce::Colour::fromString ("FF2E003E"));
+    setColour (juce::DocumentWindow::backgroundColourId,
+               juce::Colour::fromString ("FF2E003E"));
 }
 
 juce::Typeface::Ptr TickLookAndFeel::getTypefaceForFont (const juce::Font& f)
