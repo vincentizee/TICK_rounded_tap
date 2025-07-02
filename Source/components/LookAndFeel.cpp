@@ -109,10 +109,6 @@ juce::Path TickLookAndFeel::getArrowPath (juce::Rectangle<float> arrowZone, cons
 TickLookAndFeel::TickLookAndFeel()
 {
     LookAndFeel::setDefaultSansSerifTypefaceName ("KlokanTechNotoSans");
-    setColour (ResizableWindow::backgroundColourId,
-               juce::Colour::fromString ("FF2E003E"));
-    setColour (DocumentWindow::backgroundColourId,
-               juce::Colour::fromString ("FF2E003E"));
 }
 
 juce::Typeface::Ptr TickLookAndFeel::getTypefaceForFont (const juce::Font& f)
